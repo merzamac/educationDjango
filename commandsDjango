@@ -1,8 +1,20 @@
 Creating a project
     django-admin startproject mysite
 
-The development server¶
+The development server
     python manage.py runserver
     python manage.py runserver 8080
     python manage.py runserver 0.0.0.0:8000
 
+folder settings
+    producciion.py
+    local.py (DATABASES,STATIC_URL,ALLOWED_HOSTS,DEBUG) import base
+    base.py (settings - local)
+
+create app
+    python manage.py startapp polls
+    django-admin startapp myapp
+    
+    create a venv
+    python -m venv .venv
+    
