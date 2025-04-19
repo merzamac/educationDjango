@@ -1,0 +1,16 @@
+<h1>Buscar empleado</h1>
+
+<form action="" method="GET" >{% csrf_token %}
+    <input type="text" id="kword" name="kword" placeholder="Buscar">
+    <button type="submit">Buscar</button>
+</form>
+
+{% if  not object_list %}
+    <p>No hay empleados</p>
+{% endif %}
+
+<ul>
+    {% for data in object_list %}
+        <li>{{data}}</li>
+    {% endfor %}
+</ul>
