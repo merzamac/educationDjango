@@ -1,0 +1,17 @@
+<h1>skills</h1>
+<form action="" method="GET" >{% csrf_token %}
+    <input type="text" id="kword" name="kword" placeholder="Buscar">
+    <button type="submit">ID del empleado</button>
+</form>
+
+{% if  not skills %}
+    <p>No hay empleados</p>
+{% else %}
+{{skills.0}}
+<ul>
+
+    {% for skill in skills|slice:"1:" %}
+        <li>{{skill}}</li>
+    {% endfor %}
+</ul>
+{% endif %}

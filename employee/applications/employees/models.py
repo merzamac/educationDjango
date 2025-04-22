@@ -23,9 +23,10 @@ class Employee(models.Model):
     ]
     first_name = models.CharField('First Name', max_length=20)
     second_name = models.CharField('Second Name',max_length=20)
+    full_name = models.CharField('full Name',max_length=100,blank=True)
     job = models.CharField('Job',max_length=1,choices=JOB_CHOICES)
     department = models.ForeignKey(Department,on_delete=models.CASCADE) #1-->N
-    #avatar = models.ImageField(upload_to='employee',blank=True,null=True)
+    avatar = models.ImageField(upload_to='employee',blank=True,null=True)
     skills = models.ManyToManyField(Skill)
 
 
