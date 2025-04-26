@@ -1,3 +1,5 @@
+from django.conf.global_settings import STATICFILES_DIRS
+
 from .base import *
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -24,3 +26,8 @@ DATABASES = {
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+#STATICFILES_DIRS = [BASE_DIR.child('static')]
+#STATICFILES_DIRS = BASE_DIR/'static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]

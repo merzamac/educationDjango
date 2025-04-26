@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, ListView, CreateView
 from .models import  *
+from .forms import PruebaForm
 # Create your views here.
 class InderView(TemplateView):
     template_name = 'home/home.html'
@@ -20,6 +21,7 @@ class ModeloPrueba(ListView):
 class PruebaCreateView(CreateView):
     model = Prueba
     template_name = 'home/add.html'
-    fields = ['titulo','subtitulo']
+    #fields = ['titulo','subtitulo']
+    form_class = PruebaForm
     success_url = '/'
     #context_object_name = 'lista_prueba'
